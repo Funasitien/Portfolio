@@ -8,7 +8,10 @@ export default defineConfig({
   integrations: [icon(), mdx(), sitemap()],
   vite: {
     plugins: [tailwindcss()],
+    server: {
+      allowedHosts: ['code.vaatigames.ovh']
+    }
   },
   site: "https://f.dreamclouds.fr",
-  base: '/Portfolio'
+  //base: '/Portfolio'
 });
