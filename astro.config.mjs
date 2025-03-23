@@ -8,6 +8,6 @@ import mdx from "@astrojs/mdx";
 // https://astro.build/config
 export default defineConfig({
   site: "https://f.dreamclouds.fr",
-  base: '/Porfolio',
+  base: '/Portfolio',
   integrations: [tailwind(), icon(), mdx()]
 });
