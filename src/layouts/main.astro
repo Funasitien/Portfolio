@@ -43,6 +43,74 @@ const {
       transition: all 0.25s cubic-bezier(0.427, 0.073, 0.105, 0.997) 0.1s;
     }
   </style>
-  <body>
+  <body>  <div class="relative flex min-h-screen flex-col justify-center overflow-hidden bg-gray-50 dark:bg-gray-800 py-6 sm:py-12">
+    <img src="/core/light_beams.jpg" alt="" class="bolck dark:hidden absolute top-1/2 left-1/2 max-w-none -translate-x-1/2 -translate-y-1/2" />
+    <img src="/core/dark_beams.jpg" alt="" class="hidden dark:block absolute top-1/2 left-1/2 max-w-none -translate-x-1/2 -translate-y-1/2" />
+    
+    <div class="absolute inset-0 bg-[url(/core/grid.svg)] bg-center"></div>
+    <div
+      class="fixed start-0 bottom-0 md:bottom-5 z-50 flex justify-center w-full min-w-full"
+    >
+      <div
+        class="bg-base-300 md:rounded-2xl p-2 flex justify-center gap-2 max-md:w-full"
+      >
+       <div class="tooltip" data-tip="Accueil">
+          <a href="/core">
+            <img
+              src="/icons/home.png"
+              class="w-auto h-12 hover:-translate-y-2 hover:scale-110 hover:bg-primary hover:rounded-xl transition-all duration-100 p-1"
+            />
+          </a>
+        </div>
+        <div class="tooltip" data-tip="Design">
+          <a href="">
+            <img
+              src="/icons/light.png"
+              class="w-12 h-12 hover:-translate-y-2 hover:scale-110 hover:bg-primary hover:rounded-xl transition-all duration-100 p-1"
+            />
+          </a>
+        </div>
+        <div class="tooltip" data-tip="Modèles 3D">
+          <a href="/core/3d">
+            <img
+              src="/icons/cube.png"
+              class="w-12 h-12 hover:-translate-y-2 hover:scale-110 hover:bg-primary hover:rounded-xl transition-all duration-100 p-1"
+            />
+          </a>
+        </div>
+        <div class="tooltip" data-tip="Pixel Art">
+          <a href="/core/pixel">
+            <img
+              src="/icons/pixel.png"
+              class="w-12 h-12 hover:-translate-y-2 hover:scale-110 hover:bg-primary hover:rounded-xl transition-all duration-100 p-1"
+            />
+          </a>
+        </div>
+        <div class="tooltip" data-tip="Musique">
+          <a href="/core/music">
+            <img
+              src="/icons/disc.png"
+              class="w-12 h-12 hover:-translate-y-2 hover:scale-110 hover:bg-primary hover:rounded-xl transition-all duration-100 p-1"
+            />
+          </a>
+        </div>
+        <button
+          data-toggle-theme="superlight,superdark"
+          data-act-class="superlight"
+          aria-label="Theme Switcher">
+          <img
+            class="w-12 h-12 hover:-translate-y-2 hover:scale-110 hover:bg-primary hover:rounded-xl transition-all duration-100 p-1 dark:hidden"
+            src="/icons/light.png"
+            alt="White Them Palette"
+          />
+          <img
+            class="w-12 h-12 hover:-translate-y-2 hover:scale-110 hover:bg-primary hover:rounded-xl transition-all duration-100 p-1 hidden dark:block"
+            src="/icons/dark.png"
+            alt="Dark Them Palette"
+          />
+        </button>
+      </div>
+    </div>
     <slot />
+    </div>
 </html>
