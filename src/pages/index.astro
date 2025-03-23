@@ -1,27 +1,63 @@
 ---
-// Ici, on peux ajouter du code, des fichiers ou des variables que l'on pouras ensuite utiliser dans l'HTML
-
-// On importe le composant Icon de astro-icon pour pouvoir l'utiliser dans notre HTML
+import Layout from "../layouts/main.astro";
 import { Icon } from "astro-icon/components";
+
+import HeroLeft from "../components/HeroLeft.astro";
+import HeroRight from "../components/HeroRight.astro";
+import ProjectsGrid from "../components/ProjectsGrid.astro";
 ---
 
-<html lang="fr">
-  <head>
-    <meta charset="utf-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <meta name="viewport" content="width=device-width" />
-    <meta name="generator" content={Astro.generator} />
-    <title>Astro</title>
-  </head>
-  <body class="w-screen">
-    <!-- Ce tag avec la classe "prose" réactive le style des composants h* -->
-    <article class="prose prose-md mx-auto my-4 text-center">
-      <!-- MX ajoute de la marge sur l'axe X et MY ajoute de la marge sur l'axe Y (ici 4rem)
-	La liste des valeurs possible est sur tailwindcss.com -->
-      <h1 class="inline-flex align-baseline">
-        <Icon name="skill-icons:rocket" class="mr-2 align-baseline" />
-        Mon premier site avec Astro <h1></h1>
-      </h1>
-    </article>
-  </body>
-</html>
+<Layout>
+<div class="relative flex min-h-screen flex-col justify-center overflow-hidden bg-gray-50 dark:bg-gray-800 py-6 sm:py-12">
+  <img src="/core/light_beams.jpg" alt="" class="bolck dark:hidden absolute top-1/2 left-1/2 max-w-none -translate-x-1/2 -translate-y-1/2" />
+  <img src="/core/dark_beams.jpg" alt="" class="hidden dark:block absolute top-1/2 left-1/2 max-w-none -translate-x-1/2 -translate-y-1/2" />
+  <div class="absolute inset-0 bg-[url(/core/grid.svg)] bg-center"></div>
+  <div
+      class="fixed start-0 bottom-0 md:bottom-5 z-50 flex justify-center w-full min-w-full"
+    >
+      <div
+        class="bg-base-300 md:rounded-2xl p-2 flex justify-center gap-2 max-sm:w-full"
+      >
+        <div class="tooltip" data-tip="Design">
+          <a href="/core/design">
+            <img
+              src="/icons/light.png"
+              class="w-12 h-12 hover:-translate-y-2 hover:scale-110 hover:bg-primary transition-all duration-100 p-1 rounded-xl"
+            />
+          </a>
+        </div>
+        <div class="tooltip" data-tip="Modèle 3D">
+          <a href="/core/3d">
+            <img
+              src="/icons/cube.png"
+              class="w-12 h-12 hover:-translate-y-2 hover:scale-110 hover:bg-primary transition-all duration-100 p-1 rounded-xl"
+            />
+          </a>
+        </div>
+        <div class="tooltip" data-tip="Pixel Art">
+          <a href="/core/pixel">
+            <img
+              src="/icons/pixel.png"
+              class="w-12 h-12 hover:-translate-y-2 hover:scale-110 hover:bg-primary transition-all duration-100 p-1 rounded-xl"
+            />
+          </a>
+        </div>
+        <div class="tooltip" data-tip="Musique">
+          <a href="/core/music">
+            <img
+              src="/icons/disc.png"
+              class="w-12 h-12 hover:-translate-y-2 hover:scale-110 hover:bg-primary transition-all duration-100 p-1 rounded-xl"
+            />
+          </a>
+        </div>
+      </div>
+    </div>
+
+  <div class="flex flex-row p-20">
+    <div class="flex w-2/3"></div>
+    <div class="mask mask-custom bg-base-content md:h-[30rem] md:w-[30rem] z-50 rounded-badge p-6 text-base-100">
+      zs
+    </div>
+  </div>
+</div>
+</Layout>
