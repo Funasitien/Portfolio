@@ -5,21 +5,14 @@ import { Icon } from "astro-icon/components";
 ---
 
 <Layout>
-  <div class="relative flex min-h-screen flex-col justify-center overflow-hidden bg-gray-50 dark:bg-gray-800 py-6 sm:py-12">
-    <img src="/core/light_beams.jpg" alt="" class="bolck dark:hidden absolute top-1/2 left-1/2 max-w-none -translate-x-1/2 -translate-y-1/2" />
-    <img src="/core/dark_beams.jpg" alt="" class="hidden dark:block absolute top-1/2 left-1/2 max-w-none -translate-x-1/2 -translate-y-1/2" />
-    
-    <div class="absolute inset-0 bg-[url(/core/grid.svg)] bg-center"></div>
-
-    <div class="absolute flex flex-col md:flex-row justify-center p-2 md:p-20 z-20 h-screen w-full gap-12">
-      <div id="bdiv" class="flex flex-col w-full z-30 h-4/5 md:h-full">
-        <div class="flex w-full text-2xl md:text-4xl font-bold items-center gap-4">
-          <img
-              src="/icons/pixel.png"
-              class="w-12 h-12 md:w-16 md:h-16"
-            />
-            Pixel Art
-        </div>
+  <div class="absolute flex flex-col md:flex-row justify-center p-2 md:p-20 z-20 h-screen w-full gap-12">
+    <div id="bdiv" class="flex flex-col w-full z-30 h-4/5 md:h-full">
+      <div class="flex w-full text-2xl md:text-4xl font-bold items-center gap-4">
+        <img
+            src="/icons/pixel.png"
+            class="w-12 h-12 md:w-16 md:h-16"
+          />
+          Pixel Art
       </div>
     </div>
   </div>
