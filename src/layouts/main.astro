@@ -43,11 +43,10 @@ const {
     }
   </style>
   <body></body>
-    <div class="relative min-h-screen flex flex-col overflow-hidden justify-center bg-gray-50 dark:bg-gray-800 py-6 sm:py-12">
-    <img src="/core/light_beams.jpg" alt="" class="bolck dark:hidden absolute top-1/2 left-1/2 max-w-none -translate-x-1/2 -translate-y-1/2" />
-    <img src="/core/dark_beams.jpg" alt="" class="hidden dark:block absolute top-1/2 left-1/2 max-w-none -translate-x-1/2 -translate-y-1/2" />
+    <div class="relative min-h-screen flex flex-col justify-center bg-gray-50 dark:bg-gray-800 py-6 sm:py-12 z-1">
     
-    <div class="absolute inset-0 bg-[url(/core/light_grid.svg)] dark:bg-[url(/core/dark_grid.svg)] bg-center"></div>
+    <div class="absolute inset-0 bg-[url(/core/light_beams.jpg)] dark:bg-[url(/core/dark_beams.jpg)] bg-cover bg-center z-2"></div>
+    <div class="absolute inset-0 bg-[url(/core/light_grid.svg)] dark:bg-[url(/core/dark_grid.svg)] bg-center z-3"></div>
     <div
       class="fixed start-0 bottom-0 md:bottom-5 z-50 flex justify-center w-full min-w-full"
     >
