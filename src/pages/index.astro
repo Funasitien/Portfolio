@@ -9,25 +9,84 @@ import { Icon } from "astro-icon/components";
       <div class="flex w-full text-2xl md:text-4xl font-bold items-center gap-4">
         <img
             src="/icons/home.png"
-            class="w-12 h-12 md:w-16 md:h-16"
+            class="w-auto h-12 md:h-16"
           />
           Accueil
       </div>
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-        <div class="card bg-base-100">
-
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8 pt-8">
+        <div class="card col-span-2 bg-base-100">
+          <div class="card-body">
+            <h1 class="inline-flex items-center gap-2 text-xl md:text-3xl font-bold py-4">
+              <img class="w-6 h-6 md:w-8 md:h-8" src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Travel%20and%20places/Airplane%20Arrival.png" alt="Airplane Arrival" />
+              Bienvenue sur mon Porfolio !
+            </h1>
+            <p>Utilisez la barre de navigation en bas de votre écran pour afficher les différentes créations.</p>
+            <p>Certaines créations sont liés à des projets, visible sur la page <span class="text-bold">Projets</span>.</p>
+            <p>Ces projets sont parfois acompagnés de code source - si leur code est ouvert.</p>
+            <div class="divider"></div>
+            <h3 class="inline-flex items-center gap-1 text-lg md:text-2xl font-bold pb-8">
+              Bonne Découverte !
+              <img class="w-4 h-4 md:w-6 md:h-6"  src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Travel%20and%20places/Compass.png" alt="Compass" />
+            </h3>
+          </div>
         </div>
-        <div class="flex flex-col">
-<div>
-  <div class="flex w-full text-lg md:text-2xl font-semibold items-center gap-4">
-    <img
-        src="/icons/light.png"
-        class="w-8 h-8 md:w-16 md:h-16"
-      />
-      Dessin
-  </div>
-  <p>Test</p>
-</div>
+        <div class="flex flex-col gap-8">
+
+          <div>
+            <div class="flex w-full text-lg md:text-2xl font-semibold items-center gap-1">
+              <img
+                  src="/icons/palette.png"
+                  class="w-8 h-0 md:w-10 md:h-10"
+                />
+                Dessin
+            </div>
+            <p>Pixel art ou dessins réalisés sur tablette</p>
+          </div>
+
+          <div>
+            <div class="flex w-full text-lg md:text-2xl font-semibold items-center gap-1">
+              <img
+                  src="/icons/cube.png"
+                  class="w-8 h-0 md:w-10 md:h-10"
+                />
+                3D
+            </div>
+            <p>Modèles 3D réalisés avec blockbench</p>
+          </div>
+
+          <div>
+            <div class="flex w-full text-lg md:text-2xl font-semibold items-center gap-1">
+              <img
+                  src="/icons/disc.png"
+                  class="w-8 h-0 md:w-10 md:h-10"
+                />
+                Musique
+            </div>
+            <p>Musique éléctronique rélisé à partir d'Ableton Live</p>
+          </div>
+
+          <div>
+            <div class="flex w-full text-lg md:text-2xl font-semibold items-center gap-1">
+              <img
+                  src="/icons/clap.png"
+                  class="w-8 h-0 md:w-10 md:h-10"
+                />
+                Films
+            </div>
+            <p>Films de fin d'année d'option Cinéma-Audiovisuel.</p>
+          </div>
+
+          <div>
+            <div class="flex text-lg md:text-2xl font-semibold items-center gap-1">
+              <img
+                  src="/icons/chest.png"
+                  class="w-8 h-0 md:w-10 md:h-10"
+                />
+                Projets
+            </div>
+            <p class="text-secondary-content">Projets complets (explication, code source...).</p>
+          </div>
+
         </div>
       </div>
     </div>
