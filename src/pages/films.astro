@@ -4,17 +4,24 @@ import { Icon } from "astro-icon/components";
 ---
 
 <Layout>
-  <div class="flex justify-center items-center">
-    <div class="card md:w-130 h-60 bg-base-100">
-      <div class="card-body">
-        <h1 class="card-title flex justify-center">
-          <img class="w-5 h-5" src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Travel%20and%20places/Construction.png" alt="Construction" />
-          Page des Films en cours de construction
-          <img class="w-5 h-5" src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Travel%20and%20places/Construction.png" alt="Construction" />
-        </h1>
-        <p>
-          Le titre des différentes pages s'affiche au survol de la souris.
-        </p>
+  <div class="flex flex-col md:flex-row justify-center px-2 pb-16 md:px-20 md:py-8 z-20 w-full gap-12 md:h-screen">
+    <div id="bdiv" class="flex flex-col w-full z-30 md:h-4/5 md:h-full">
+      <div class="flex w-full text-2xl md:text-4xl font-bold items-center gap-4">
+        <img
+            src="/icons/clap.png"
+            class="w-12 h-12 md:w-16 md:h-16"
+          />
+          Films
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8 pt-8">
+        <div>
+          <h1>Bloddy Mind</h1>
+          <iframe class="w-full h-32 md:h-80 rounded-2xl" src="https://www.youtube.com/embed/SU5umnPL9sA?si=gczolm2T5WR-0IAd" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        </div>
+        <div>
+          <h1>People in Black</h1>
+          <iframe class="w-full h-32 md:h-80 rounded-2xl" src="https://www.youtube.com/embed/SU5umnPL9sA?si=gczolm2T5WR-0IAd" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        </div>
       </div>
     </div>
   </div>
