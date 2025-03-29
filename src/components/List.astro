@@ -2,15 +2,15 @@
 import { Icon } from "astro-icon/components";
 const {
   titre,
-  icon,
+  icon = "tabler:chart-bubble-filled",
   icon_bg,
-  link,
+  link = "none",
   data,
 } = Astro.props;
 ---
 <li class="list-row list-col-grow">
     <div class:list={["flex justify-center items-center rounded-xl px-1.5", icon_bg]}>
-      <Icon name={icon} class="text-4xl" />
+      {icon.startsWith('http') ? <img src={icon} class="w-10 h-10 rounded" /> : <Icon name={icon} class="text-4xl" />}
     </div>
     <div>
       <div class="text-lg font-semibold">{titre}</div>
@@ -18,9 +18,15 @@ const {
         <slot />
       </div>
     </div>
+    {link.startsWith('none') ?
+    <a class="btn btn-square btn-ghost btn-disabled">
+      <Icon name="tabler:link-off" class="size-[1.6em]"/>
+    </a>
+      : 
     <a class="btn btn-square btn-ghost" href={link} target="_blank">
       <Icon name="tabler:external-link" class="size-[1.6em]"/>
     </a>
+    }
     <button class="btn btn-square btn-primary core" data-core={data}>
       <Icon name="tabler:zoom-scan" class="size-[1.6em]"/>
     </button>

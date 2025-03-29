@@ -1,11 +1,12 @@
 ---
 import Layout from "../layouts/main.astro";
+import List from "../components/List.astro";
 import { Icon } from "astro-icon/components";
 ---
 
 <Layout>
   <div class="flex flex-col md:flex-row justify-center px-2 pb-16 md:px-20 md:py-8 z-20 w-full gap-12 md:h-screen">
-    <div id="bdiv" class="flex flex-col w-full md:w-3/5 z-30 md:h-4/5 md:h-full">
+    <div id="bdiv" class="flex flex-col w-full md:w-1/2 z-30 md:h-4/5 md:h-full">
       <div class="flex w-full text-2xl md:text-4xl font-bold items-center gap-4">
         <img
             src="/icons/chest.png"
@@ -14,6 +15,95 @@ import { Icon } from "astro-icon/components";
           />
           Projets
       </div>
+      <ul
+          class="list block bg-base-100 rounded-box shadow-md overflow-auto w-full h-fit my-12"
+        >
+      <List
+        titre="DEMOCRAFT"
+        icon="https://us-east-1.tixte.net/uploads/cdn.democraft.fr/logo-vide.png"
+        link="https://democraft.fr">
+          <span class="badge badge-xs badge-success">
+            <Icon name="tabler:brand-minecraft"/>
+            Minecraft
+          </span>
+          <span class="badge badge-xs badge-soft">
+            <svg class="w-fit h-fit" xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" color="currentColor"><path d="M6.175 10.333c-1.208.408-1.955.97-1.955 1.593c0 .848 1.389 1.587 3.44 1.97m0 0c-.762.386-1.217.875-1.217 1.408c0 1.243 2.487 2.251 5.555 2.251a13 13 0 0 0 2.223-.187m-6.56-3.471a18 18 0 0 0 3.226.28c1.708 0 3.265-.216 4.445-.573m1.11-3.48c-1.411.417-3.379.676-5.555.676c-4.295 0-7.778-1.008-7.778-2.252c0-.96 2.077-1.78 5-2.104"/><path d="M22 19.07C22 20.688 17.523 22 12 22S2 20.688 2 19.07c0-1.15 1.707-2.146 5-2.626m11.76-7.656c4.214-1.094 4.816 5.468-1.205 7.656M17.558 2c-.74.123-2.133.815-1.778 2.593c.356 1.777-.148 2.716-.444 2.963M13.113 2c-.741.148-2.134.978-1.778 3.111s-.148 2.704-.444 3"/></g></svg>
+            Java
+          </span>
+          
+      </List> 
+      <List
+      titre="Vaatigames"
+      icon="https://vaatigames.ovh/img/vaati2.png"
+      link="https://vaatigames.ovh">
+        <span class="badge badge-secondary badge-xs">
+          <Icon name="tabler:server-2" />
+          Administration Système
+        </span>
+      </List>
+      <List
+      titre="MOODS-CO"
+      icon="https://github.com/moods-co.png">
+        <span class="badge badge-xs badge-error">
+          <Icon name="tabler:currency-bitcoin" />
+          Web3
+        </span>
+        <span class="badge badge-xs badge-soft">
+          <Icon name="tabler:file-music" />
+          Musique
+        </span>
+      </List>
+      <List
+        titre="Hubgames"
+        icon="https://hubgames.klaynight.fr/content/images/icon.png">
+        <span class="badge badge-xs">Administration Système</span>
+      </List>
+      </ul>
+    </div>
+
+    <div id="idiv" class="flex flex-col w-full md:w-1/2 z-30 sm:h-full h-96 max-md:hidden">
+      <div class="">
+        <div class="flex flex-row place-content-between">
+          <span class="badge badge-primary badge-xl font-bold" id="title">
+            Bule
+          </span>
+          <button class="btn btn-ghost btn-sm md:hidden" onclick="hideI()">
+            <Icon name="tabler:arrow-big-left-filled" class="text-3xl" />
+          </button>
+        </div>
+        <p id="description" class="p-2 text-base-content">
+          Titre n°x de la série "Chill Time". Réalisé en 2022
+        </p>
+      </div>
+      <div
+        class="bg-base-300 h-full w-full z-50 rounded-4xl text-base-content"
+      >
+      </div>
     </div>
   </div>
+
+  <script is:inline>
+    const buttons = document.querySelectorAll("button.core");
+    const iframe = document.querySelector(".iframe");
+    const idiv = document.querySelector("#idiv");
+    const bdiv = document.querySelector("#bdiv");
+
+    buttons.forEach((button) => {
+      button.addEventListener("click", () => {
+        const coreValue = button.getAttribute("data-core");
+        if (coreValue) {
+          iframe.src = coreValue;
+          bdiv.classList.add("max-md:hidden")
+          idiv.classList.remove("max-md:hidden")
+          document.querySelector("#title").innerHTML = button.getAttribute("data-titre");
+          document.querySelector("#description").innerHTML = button.getAttribute("data-description");
+        }
+      });
+    });
+
+    function hideI() {
+      bdiv.classList.remove("max-md:hidden")
+      idiv.classList.add("max-md:hidden")
+    }
+  </script>
 </Layout>
