@@ -12,6 +12,6 @@ export default defineConfig({
       allowedHosts: ['code.vaatigames.ovh']
     }
   },
-  site: "https://f.dreamclouds.fr",
+  site: "https://ws.funa.dev",
   //base: '/Portfolio'
 });
