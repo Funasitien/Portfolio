@@ -1,0 +1,15 @@
+---
+import { Icon } from "astro-icon/components";
+
+const {
+  name,
+  icon,
+  repo,
+  color = "bg-base-100",
+} = Astro.props;
+---
+<div class=`border-4 border-dashed rounded-2xl p-4 flex flex-col justify-center items-center ${color}`>
+    <img src="" class="" />
+    <h1 class="text-xl">{ name }</h1>
+</div>
+
