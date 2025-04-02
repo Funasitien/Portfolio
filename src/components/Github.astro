@@ -2,14 +2,25 @@
 import { Icon } from "astro-icon/components";
 
 const {
-  name,
-  icon,
   repo,
+  visibility = "public", // Default to public
+  url = "github.com",
   color = "bg-base-100",
+  description = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras consectetur nulla ligula, id varius lectus rhoncus in."
 } = Astro.props;
----
-<div class=`border-4 border-dashed rounded-2xl p-4 flex flex-col justify-center items-center ${color}`>
-    <img src="" class="" />
-    <h1 class="text-xl">{ name }</h1>
-</div>
 
+const visibilityIcons = {
+  public: "lucide:globe",
+  private: "lucide:lock",
+  template: "lucide:layers",
+};
+---
+
+<div class={`border-4 border-dashed rounded-2xl p-4 flex flex-col relative ${color}`}>
+  <a class="flex gap-2 items-center" href=`https://${url}/${repo}` target="_blank" rel="noopener noreferrer">
+    <img class="h-6 w-6" src="https://cdn-icons-png.flaticon.com/512/25/25231.png" />
+    <h1 class="text-xl font-bold">{repo}</h1>
+  </a>  
+  <Icon name={visibilityIcons[visibility]} class="w-6 h-6 absolute top-4 right-4" />
+  <p>{ description }</p>
+</div>

@@ -86,113 +86,106 @@ import { Icon } from "astro-icon/components";
             Musique
           </span>
         </List>
-        <List
-          titre="Hubgames"
-          icon="https://hubgames.klaynight.fr/content/images/icon.png"
-          data="hubgames"
-        >
-          <span class="badge badge-xs">Administration Système</span>
-        </List>
       </ul>
     </div>
 
     <div
-      class="flex flex-col w-full md:w-1/2 z-30 h-full hmax-md:hidden"
+      class="flex flex-col w-full md:w-1/2 z-30 h-full max-md:hidden"
       id="idiv"
     >
       <div
         id="start"
-        class="md:m-10 bg-base-300 h-full w-full z-50 rounded-4xl text-base-content flex items-center justify-center"
+        class="md:m-10 bg-base-300 h-full w-full z-50 rounded-4xl text-base-content flex items-center justify-center max-sm:hidden"
       >
         <img class="w-32 h-32 opacity-25" src="/gray.png" />
       </div>
 
       <div
         id="democraft"
-        class="hidden md:m-10 bg-base-300 h-full w-full z-50 rounded-4xl text-base-content"
+        class="hidden md:m-10 bg-base-300 h-full w-full z-50 rounded-4xl text-base-content overflow-y-scroll"
       >
-        <div class="card-body">
-          <h2 class="text-2xl font-bold">Technologies</h2>
+        <div class="card-body md:p-10">
+          <img class="h-auto w-auto" src="https://us-east-1.tixte.net/uploads/cdn.democraft.fr/title_flat.png" />
+          <p class="text-lg">DEMOCRAFT est un serveur Minecraft, fondé en 2022 et qui vise à offrir aux joueurs un unique serveur où
+            ils peuvent jouer avec tous leurs amis, peu importent leurs plateformes.</p>
+          <h2 class="text-2xl font-bold my-4">Technologies</h2>
           <div class="grid grid-cols-2 md:grid-cols-4 gap-6 mb-4">
             <Tool icon="hugeicons:java" name="Java" />
-            <Tool icon="tabler:brand-laravel" name="Laravel" />
             <Tool icon="tabler:brand-python" name="Python" />
             <Tool icon="tabler:brand-debian" name="Linux" />
-            <Tool icon="tabler:hexagon-letter-n" name="Nginx" />
             <Tool icon="tabler:brand-mysql" name="MySQL" />
-            <Tool icon="tabler:brand-docker" name="Docker" />
-            <Tool icon="tabler:brand-php" name="PHP" />
           </div>
-          <h2 class="text-2xl font-bold">Technologies</h2>
-          <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-4">
-            <Github />
-            <Github />
-            <Github />
-            <Github />
+          <h2 class="text-2xl font-bold my-4">Code</h2>
+          <div class="grid grid-cols-1 gap-6 mb-4">
+            <Github 
+            repo="democraftmc/DefaultServer"
+            description="Plugin pour Minecraft : Java edition permettant aux joueurs de choisir un serveur par défaut sur lequel apparaitre à leur connexion."
+            />
           </div>
-        </div>
-
-        <div
-        id="vaatigames"
-        class="hidden md:m-10 bg-base-300 h-full w-full z-50 rounded-4xl text-base-content"
-      >
-        <div class="card-body">
-          <h1>Technologies</h1>
-          <div class="grid grid-cols-2 md:grid-cols-4 gap-6 my-4">
-            <Tool
-            icon="tabler:brand-minecraft"
-            name="Minecraft"
-            color="bg-success border-success-content text-success-content"
-          />
-            <Tool icon="hugeicons:java" name="Java" />
-            <Tool icon="tabler:brand-github" name="GitHub CI" />
-            <Tool icon="tabler:brand-laravel" name="Laravel" />
-            <Tool icon="tabler:brand-python" name="Python" />
-            <Tool icon="tabler:brand-debian" name="Linux" />
-            <Tool icon="tabler:brand-tailwind" name="TailwindCSS" />
-            <Tool icon="tabler:hexagon-letter-n" name="Nginx" />
-            <Tool icon="tabler:brand-mysql" name="MySQL" />
-            <Tool icon="tabler:brand-docker" name="Docker" />
-            <Tool icon="tabler:brand-php" name="PHP" />
-          </div>
-          <h1>Code</h1>
         </div>
       </div>
 
-      <div
-        id="moods"
-        class="hidden md:m-10 bg-base-300 h-full w-full z-50 rounded-4xl text-base-content"
+        <div
+        id="vaatigames"
+        class="hidden md:m-10 bg-base-300 h-full w-full z-50 rounded-4xl text-base-content overflow-y-scroll"
       >
-        <div class="card-body">
-          <h1>Technologies</h1>
-          <div class="grid grid-cols-2 md:grid-cols-4 gap-6 my-4">
-            <Tool
-              icon="tabler:brand-minecraft"
-              name="Minecraft"
-              color="bg-success border-success-content text-success-content"
-            />
-            <Tool color="bg-success" icon="hugeicons:java" name="Java" />
+        <div class="card-body md:p-10">
+          <img class="h-auto w-auto" src="https://vaatigames.ovh/img/vaati1.png" />
+          <p class="text-lg">Vaatigames est une association, originallement créé pour hébergé DEMOCRAFT.
+            Elle offre au particuliers des serveurs, grâce aux dons fait à Vaatigames.</p>
+          <h2 class="text-2xl font-bold my-4">Technologies</h2>
+          <div class="grid grid-cols-2 md:grid-cols-4 gap-6 mb-4">
+            <Tool icon="tabler:brand-laravel" name="Laravel" />
+            <Tool icon="tabler:brand-debian" name="Linux" />
+            <Tool icon="tabler:hexagon-letter-n" name="Nginx" />
+            <Tool icon="tabler:brand-docker" name="Docker" />
           </div>
-          <h1>Code</h1>
+          <h2 class="text-2xl font-bold my-4">Code</h2>
+          <div class="grid grid-cols-1 gap-6 mb-4">
+            <Github
+            repo="Vaatigames/sleeky-blur-theme"
+            description="Thème et site principal de Vaatigame, développé avec Tailwind, DaisyUI et Astro."
+            />
+            <Github
+            repo="Vaatigames/Vaaticon"
+            description="Un plugin pour Minecraft : Java edition qui permet de remplacer les interfaces de connexion des proxy Minecraft par des appels aux nouveaux protocoles Minecraft 1.20."
+            />
+          </div>
         </div>
+      </div>
+
 
         <div
-        id="hubgames"
-        class="hidden md:m-10 bg-base-300 h-full w-full z-50 rounded-4xl text-base-content"
+        id="moods"
+        class="hidden md:m-10 bg-base-300 h-full w-full z-50 rounded-4xl text-base-content overflow-y-scroll"
       >
-        <div class="card-body">
-          <h1>Technologies</h1>
-          <div class="grid grid-cols-2 md:grid-cols-4 gap-6 my-4">
-            <Tool
-              icon="tabler:brand-minecraft"
-              name="Minecraft"
-              color="bg-success border-success-content text-success-content"
-            />
-            <Tool color="bg-success" icon="hugeicons:java" name="Java" />
+        <div class="card-body md:p-10">
+          <img class="h-auto w-auto" src="https://us-east-1.tixte.net/uploads/cdn.democraft.fr/title_flat.png" />
+          <p class="text-lg">MOODS est un projet de plateforme de streaming de musiques, qui pour le moment essaye d'implémenter
+            l'api AUDIUS pour utiliser le Web3 (la blockchain) comme fournisseur de musique.</p>
+          <h2 class="text-2xl font-bold my-4">Technologies</h2>
+          <div class="grid grid-cols-2 md:grid-cols-4 gap-6 mb-4">
+            <Tool icon="hugeicons:music-note-02" name="Web3" color="bg-error border-error-content text-error-content"/>
+            <Tool icon="tabler:brand-nuxt" name="Nuxt" />
+            <Tool icon="tabler:brand-react" name="React" />
+            <Tool icon="tabler:brand-vue" name="Vue" />
           </div>
-          <h1>Code</h1>
+          <h2 class="text-2xl font-bold my-4">Code</h2>
+          <div class="grid grid-cols-1 gap-6 mb-4">
+            <Github 
+            repo="moods-co/react"
+            description="Version fonctionnel du projet moods, codé avec React."
+            />
+            <Github 
+            repo="moods-co/nuxt"
+            description="Version fonctionnel du projet moods, codé avec Nuxt."
+            />
+          </div>
         </div>
-
+      </div>
+      <button onclick="hideI()" class="mt-4 sm:hidden btn btn-primary">
+        Retour aux projets
+      </button>
     </div>
   </div>
 
@@ -216,6 +209,7 @@ import { Icon } from "astro-icon/components";
     });
 
     function hideI() {
+      idiv.classList.add("max-md:hidden")
       bdiv.classList.remove("max-md:hidden");
       active.classList.add("hidden");
     }
