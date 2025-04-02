@@ -12,14 +12,14 @@ const {
 const visibilityIcons = {
   public: "lucide:globe",
   private: "lucide:lock",
-  template: "lucide:layers",
+  template: "lucide:book-dashed",
 };
 ---
 
 <div class={`border-4 border-dashed rounded-2xl p-4 flex flex-col relative ${color}`}>
-  <a class="flex gap-2 items-center" href=`https://${url}/${repo}` target="_blank" rel="noopener noreferrer">
+  <a class="flex gap-2 items-center max-w-[90%] link link-hover" href=`https://${url}/${repo}` target="_blank" rel="noopener noreferrer">
     <img class="h-6 w-6" src="https://cdn-icons-png.flaticon.com/512/25/25231.png" />
-    <h1 class="text-xl font-bold">{repo}</h1>
+    <h1 class="text-lg md:text-xl font-bold">{repo}</h1>
   </a>  
   <Icon name={visibilityIcons[visibility]} class="w-6 h-6 absolute top-4 right-4" />
   <p>{ description }</p>

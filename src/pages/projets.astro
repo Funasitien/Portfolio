@@ -3,11 +3,13 @@ import Layout from "../layouts/main.astro";
 import List from "../components/List.astro";
 import Tool from "../components/Tool.astro";
 import Github from "../components/Github.astro";
+import MoodCard from "../components/MoodCard.astro"
 import { Icon } from "astro-icon/components";
 ---
 
 <Layout>
   <div
+    transition:animate="none"
     class="flex flex-col md:flex-row justify-center px-2 pb-16 md:px-20 md:py-8 z-20 w-full gap-12 md:h-screen"
   >
     <div
@@ -33,11 +35,11 @@ import { Icon } from "astro-icon/components";
           link="https://democraft.fr"
           data="democraft"
         >
-          <span class="badge badge-xs badge-success">
-            <Icon name="tabler:brand-minecraft" />
+          <span class="badge gap-0.5 badge-xs badge-success">
+            <Icon class="w-3.5 h-3.5" name="tabler:brand-minecraft" />
             Minecraft
           </span>
-          <span class="badge badge-xs badge-soft">
+          <span class="badge gap-0.5 badge-xs badge-soft">
             <svg
               class="w-fit h-fit"
               xmlns="http://www.w3.org/2000/svg"
@@ -67,8 +69,8 @@ import { Icon } from "astro-icon/components";
           link="https://vaatigames.ovh"
           data="vaatigames"
         >
-          <span class="badge badge-secondary badge-xs">
-            <Icon name="tabler:server-2" />
+          <span class="badge gap-0.5 badge-secondary badge-xs">
+            <Icon class="w-3.5 h-3.5" name="tabler:server-2" />
             Administration Système
           </span>
         </List>
@@ -77,13 +79,27 @@ import { Icon } from "astro-icon/components";
           icon="https://github.com/moods-co.png"
           data="moods"
         >
-          <span class="badge badge-xs badge-error">
-            <Icon name="tabler:currency-bitcoin" />
+          <span class="badge gap-0.5 badge-xs badge-error">
+            <Icon class="w-3.5 h-3.5" name="tabler:currency-bitcoin" />
             Web3
           </span>
-          <span class="badge badge-xs badge-soft">
-            <Icon name="tabler:file-music" />
+          <span class="badge gap-0.5 badge-xs badge-soft">
+            <Icon class="w-3.5 h-3.5" name="tabler:file-music" class="w-3.5 h-3.5"/>
             Musique
+          </span>
+        </List>
+        <List
+          titre="Projets Personnels"
+          icon="https://ws.funa.dev/logo.png"
+          data="funa"
+        >
+          <span class="badge gap-0.5 badge-xs badge-primary">
+            <Icon class="w-3.5 h-3.5" name="tabler:brand-open-source" />
+            Open Source
+          </span>
+          <span class="badge gap-0.5 badge-xs badge-soft">
+            <Icon class="w-3.5 h-3.5" name="tabler:sparkles" />
+            Divers
           </span>
         </List>
       </ul>
@@ -121,6 +137,20 @@ import { Icon } from "astro-icon/components";
             repo="democraftmc/DefaultServer"
             description="Plugin pour Minecraft : Java edition permettant aux joueurs de choisir un serveur par défaut sur lequel apparaitre à leur connexion."
             />
+            <Github 
+            repo="democraftmc/ore-aui"
+            visibility="template"
+            description="Thème Bootstrap dans le style des composants 'Ore UI' de Minecraft."
+            />
+            <Github 
+            repo="democraftmc/front"
+            description="Code Laravel & Astro de notre site principal."
+            />
+            <Github 
+            repo="democraftmc/core"
+            visibility="private"
+            description="Code source de nos modes de jeux [Privé]."
+            />
           </div>
         </div>
       </div>
@@ -130,9 +160,9 @@ import { Icon } from "astro-icon/components";
         class="hidden md:m-10 bg-base-300 h-full w-full z-50 rounded-4xl text-base-content overflow-y-scroll"
       >
         <div class="card-body md:p-10">
-          <img class="h-auto w-auto" src="https://vaatigames.ovh/img/vaati1.png" />
-          <p class="text-lg">Vaatigames est une association, originallement créé pour hébergé DEMOCRAFT.
-            Elle offre au particuliers des serveurs, grâce aux dons fait à Vaatigames.</p>
+          <img class="h-auto w-auto px-10 md:px-22 py-2" src="https://vaatigames.ovh/img/vaati1.png" />
+          <p class="text-lg">Vaatigames est une association, originalement créé pour héberger DEMOCRAFT.
+            Elle offre aux particuliers des serveurs, grâce aux dons faits à Vaatigames.</p>
           <h2 class="text-2xl font-bold my-4">Technologies</h2>
           <div class="grid grid-cols-2 md:grid-cols-4 gap-6 mb-4">
             <Tool icon="tabler:brand-laravel" name="Laravel" />
@@ -160,12 +190,12 @@ import { Icon } from "astro-icon/components";
         class="hidden md:m-10 bg-base-300 h-full w-full z-50 rounded-4xl text-base-content overflow-y-scroll"
       >
         <div class="card-body md:p-10">
-          <img class="h-auto w-auto" src="https://us-east-1.tixte.net/uploads/cdn.democraft.fr/title_flat.png" />
+          <MoodCard />
           <p class="text-lg">MOODS est un projet de plateforme de streaming de musiques, qui pour le moment essaye d'implémenter
             l'api AUDIUS pour utiliser le Web3 (la blockchain) comme fournisseur de musique.</p>
           <h2 class="text-2xl font-bold my-4">Technologies</h2>
           <div class="grid grid-cols-2 md:grid-cols-4 gap-6 mb-4">
-            <Tool icon="hugeicons:music-note-02" name="Web3" color="bg-error border-error-content text-error-content"/>
+            <Tool icon="hugeicons:music-note-02" name="Web3"/>
             <Tool icon="tabler:brand-nuxt" name="Nuxt" />
             <Tool icon="tabler:brand-react" name="React" />
             <Tool icon="tabler:brand-vue" name="Vue" />
@@ -183,6 +213,31 @@ import { Icon } from "astro-icon/components";
           </div>
         </div>
       </div>
+
+      <div
+        id="funa"
+        class="hidden md:m-10 bg-base-300 h-full w-full z-50 rounded-4xl text-base-content overflow-y-scroll"
+      >
+        <div class="card-body md:p-10">
+          <img class="h-32 w-auto object-cover rounded-2xl object-[25%_75%]" src="https://funa.dev/banner.png" />
+          <p class="text-lg py-4">Quelques projets personnels que je n'ai lié à aucune organisation !</p>
+          <div class="grid grid-cols-1 gap-6 mb-4">
+            <Github 
+            repo="Funasitien/fiches.me"
+            description="Site regroupant toutes mes fiches de cours. Mention spéciale à la philosophie."
+            />
+            <Github 
+            repo="samuelaligator/PokeKerna"
+            description="Application flutter qui reproduit l'application DLC Pokémon, mais avec des cartes personnalisées."
+            />
+            <Github 
+            repo="Funasitien/nuitducode-2024"
+            description="Code source de ma participation à la nuit du code 2024"
+            />
+          </div>
+        </div>
+      </div>
+
       <button onclick="hideI()" class="mt-4 sm:hidden btn btn-primary">
         Retour aux projets
       </button>
