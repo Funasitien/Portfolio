@@ -3,6 +3,7 @@ import "@fontsource/poppins";
 import "@fontsource/poppins/600.css";
 import "@fontsource/poppins/800.css";
 import "../assets/app.css";
+import ThemeScript from "../components/ThemeScript.astro"
 
 import { ClientRouter } from 'astro:transitions';
 
@@ -24,17 +25,7 @@ const {
     <meta content="https://ws.funa.dev" property="og:url" />
     <meta content="/logo.png" property="og:image" />
     <meta content="#43B581" data-react-helmet="true" name="theme-color" />
-    <script is:inline src="https://cdn.jsdelivr.net/npm/theme-change@2.0.2/index.js" data-astro-rerun></script>
-    <script is:inline data-astro-rerun>
-      if (localStorage.getItem("theme") === null) {
-        document.documentElement.setAttribute("data-theme", "superlight");
-      } else
-        document.documentElement.setAttribute(
-          "data-theme",
-          localStorage.getItem("theme")
-        );
-    </script>
-
+    <ThemeScript />
     <ClientRouter />
   </head>
   <style>
