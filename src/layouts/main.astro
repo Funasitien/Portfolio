@@ -115,6 +115,7 @@ const {
         </div>
         <div class="tooltip" data-tip="Chaner de thème">
           <button
+          onclick="themeToggle()"
           data-toggle-theme="superlight,superdark"
           data-act-class="superlight"
           aria-label="Changer de Thème">
@@ -129,14 +130,5 @@ const {
     </div>
     <slot />
     </div>
-    <script is:inline>
-      if (localStorage.getItem("theme") === null) {
-        document.documentElement.setAttribute("data-theme", "superlight");
-      } else
-        document.documentElement.setAttribute(
-          "data-theme",
-          localStorage.getItem("theme")
-        );
-    </script>
   </body>
 </html>
