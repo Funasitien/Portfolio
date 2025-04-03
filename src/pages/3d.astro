@@ -120,10 +120,10 @@ import { Icon } from "astro-icon/components";
     </div>
 
   <script is:inline data-astro-rerun>
-    const buttons = document.querySelectorAll("button.core");
-    const iframe = document.querySelector(".iframe");
-    const idiv = document.querySelector("#idiv");
-    const bdiv = document.querySelector("#bdiv");
+    let buttons = document.querySelectorAll("button.core");
+    let iframe = document.querySelector(".iframe");
+    let idiv = document.querySelector("#idiv");
+    let bdiv = document.querySelector("#bdiv");
 
     buttons.forEach((button) => {
       button.addEventListener("click", () => {
