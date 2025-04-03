@@ -130,18 +130,18 @@ import { Icon } from "astro-icon/components";
   </div>
 
   <script is:inline data-astro-rerun>
-    let buttons = document.querySelectorAll("button.core");
-    let iframe = document.querySelector(".iframe");
-    let idiv = document.querySelector("#idiv");
-    let bdiv = document.querySelector("#bdiv");
+    const Mbuttons = document.querySelectorAll("button.core");
+    const Miframe = document.querySelector(".iframe");
+    const Midiv = document.querySelector("#idiv");
+    const Mbdiv = document.querySelector("#bdiv");
 
-    buttons.forEach((button) => {
+    Mbuttons.forEach((button) => {
       button.addEventListener("click", () => {
         const coreValue = button.getAttribute("data-core");
         if (coreValue) {
-          iframe.src = coreValue;
-          bdiv.classList.add("max-md:hidden")
-          idiv.classList.remove("max-md:hidden")
+          Miframe.src = coreValue;
+          Mbdiv.classList.add("max-md:hidden")
+          Midiv.classList.remove("max-md:hidden")
           document.querySelector("#title").innerHTML = button.getAttribute("data-titre");
           document.querySelector("#description").innerHTML = button.getAttribute("data-description");
         }
@@ -149,8 +149,8 @@ import { Icon } from "astro-icon/components";
     });
 
     function hideI() {
-      bdiv.classList.remove("max-md:hidden")
-      idiv.classList.add("max-md:hidden")
+      Mbdiv.classList.remove("max-md:hidden")
+      Midiv.classList.add("max-md:hidden")
     }
   </script>
 </Layout>
