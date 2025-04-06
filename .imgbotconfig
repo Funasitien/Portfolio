@@ -4,7 +4,6 @@
     "aggressiveCompression": "true",
     "compressWiki": "true",
     "minKBReduced": 500,
-    "prTitle" : "⚡ Compression des Images",        
-    "prBody" : " 💾 Taille originale : {optimization_ratio}
-                 📉 Taille optimizé : {optimization_details}"
+    "prTitle": "⚡ Compression des Images",
+    "prBody": " 💾 Taille originale : {optimization_ratio}\n📉 Taille optimizé : {optimization_details}"
 }
