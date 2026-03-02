@@ -7,10 +7,11 @@ const {
   link = "none",
   data,
 } = Astro.props;
+
 ---
 <li class="list-row list-col-grow">
     <div class:list={["flex justify-center items-center rounded-xl px-1.5", icon_bg]}>
-      {icon.startsWith('http') ? <img src={icon} class="w-10 h-10 rounded" /> : <Icon name={icon} class="text-4xl" />}
+      {icon.includes('/') ? <img src={icon} class="w-10 h-10 rounded" /> : <Icon name={icon} class="text-4xl" />}
     </div>
     <div>
       <div class="text-lg font-semibold">{titre}</div>
